@@ -18,8 +18,8 @@ Open http://localhost:5173/mspsolar/.
 ## Features
 
 - **Solar Calculator**: runs in the browser. It works out system size, panels, roof area, monthly generation, savings, cost, PM Surya Ghar subsidy and payback, plus a short Hindi summary.
-- **Contact form**: checks the details, then opens WhatsApp (+91-7357562385) with the name, mobile, city and bill pre-filled. Leads arrive on WhatsApp; nothing is stored on a server.
-- **WhatsApp and phone links**: all point to +91-7357562385.
+- **Contact form**: checks the details, then opens WhatsApp (+91-7357562365) with the name, mobile, city and bill pre-filled. Leads arrive on WhatsApp; nothing is stored on a server.
+- **WhatsApp and phone links**: all point to +91-7357562365.
 
 ## Change the numbers
 

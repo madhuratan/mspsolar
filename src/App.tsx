@@ -2,9 +2,9 @@ import { useState, type FormEvent } from "react";
 import { leadSchema, type CalcResult } from "../shared/schemas";
 import { estimate, templateSummary } from "../shared/solar";
 
-const PHONE_DISPLAY = "+91-7357562385";
-const PHONE_TEL = "tel:+917357562385";
-const WHATSAPP_NUMBER = "917357562385";
+const PHONE_DISPLAY = "+91-7357562365";
+const PHONE_TEL = "tel:+917357562365";
+const WHATSAPP_NUMBER = "917357562365";
 const EMAIL = "ratanmadhupareek@gmail.com";
 const WHATSAPP_INSPECTION = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("नमस्ते, मुझे Free Site Inspection चाहिए।")}`;
 
