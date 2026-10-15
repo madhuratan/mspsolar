@@ -12,11 +12,6 @@ export const leadSchema = z.object({
 
 export type Lead = z.infer<typeof leadSchema>;
 
-export const calcRequestSchema = z.object({
-  units: z.number().finite().min(20).max(20000),
-  backup: z.boolean(),
-});
-
 export type CalcResult = {
   system_type: string;
   system_kw: number;
@@ -30,5 +25,3 @@ export type CalcResult = {
   payback_years: number;
   summary_hindi: string;
 };
-
-export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string };

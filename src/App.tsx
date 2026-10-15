@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
-import { leadSchema, type ApiResult, type CalcResult } from "../shared/schemas";
+import { leadSchema, type CalcResult } from "../shared/schemas";
+import { estimate, templateSummary } from "../shared/solar";
 
 const PHONE_DISPLAY = "+91-7357562385";
 const PHONE_TEL = "tel:+917357562385";
@@ -32,15 +33,6 @@ const services = [
 
 const inr = (n: number) => "₹" + Math.round(n).toLocaleString("en-IN");
 
-async function postJson<T>(url: string, body: unknown): Promise<ApiResult<T>> {
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  return res.json();
-}
-
 function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-20">
@@ -63,7 +55,7 @@ function Hero() {
   return (
     <section className="relative min-h-[92vh] overflow-hidden">
       <img
-        src="/hero.jpg"
+        src={`${import.meta.env.BASE_URL}hero.jpg`}
         alt="जयपुर में छत पर सोलर पैनल"
         width={1600}
         height={912}
@@ -160,11 +152,10 @@ function WhyUs() {
 function Calculator() {
   const [units, setUnits] = useState("");
   const [backup, setBackup] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CalcResult | null>(null);
 
-  async function onSubmit(e: FormEvent) {
+  function onSubmit(e: FormEvent) {
     e.preventDefault();
     const n = Number(units);
     if (!Number.isFinite(n) || n < 20 || n > 20000) {
@@ -172,17 +163,8 @@ function Calculator() {
       return;
     }
     setError("");
-    setLoading(true);
-    setResult(null);
-    try {
-      const res = await postJson<CalcResult>("/api/calculate", { units: n, backup });
-      if (res.ok) setResult(res.data);
-      else setError(res.error);
-    } catch {
-      setError("कुछ गड़बड़ हुई, कृपया फिर कोशिश करें।");
-    } finally {
-      setLoading(false);
-    }
+    const est = estimate(n, backup);
+    setResult({ ...est, summary_hindi: templateSummary(n, est) });
   }
 
   const rows: [string, string][] = result
@@ -227,12 +209,7 @@ function Calculator() {
           />
           बैटरी बैकअप चाहिए (Hybrid)
         </label>
-        <button
-          disabled={loading}
-          className="rounded-xl bg-sun px-6 py-3 font-bold text-sun-foreground disabled:opacity-60"
-        >
-          {loading ? "गणना हो रही है..." : "सुझाव पाएँ"}
-        </button>
+        <button className="rounded-xl bg-sun px-6 py-3 font-bold text-sun-foreground">सुझाव पाएँ</button>
       </form>
       {error && <p className="mt-4 text-destructive">{error}</p>}
       {result && (
@@ -257,11 +234,11 @@ function Calculator() {
 }
 
 function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [done, setDone] = useState(false);
   const [error, setError] = useState("");
   const [whatsappUrl, setWhatsappUrl] = useState("");
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const parsed = leadSchema.safeParse(Object.fromEntries(new FormData(form)));
@@ -270,21 +247,12 @@ function Contact() {
       return;
     }
     setError("");
-    setStatus("sending");
-    try {
-      const res = await postJson<null>("/api/consultation", parsed.data);
-      if (!res.ok) throw new Error(res.error);
-    } catch {
-      setStatus("error");
-      setError("कुछ गड़बड़ हुई, कृपया दोबारा कोशिश करें या कॉल करें।");
-      return;
-    }
     const lead = parsed.data;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
       `नमस्ते, मुझे सोलर कंसल्टेशन चाहिए।\nनाम: ${lead.name}\nमोबाइल: ${lead.mobile}\nशहर: ${lead.city}\nपिछला बिल: ${lead.monthly_bill}`,
     )}`;
     setWhatsappUrl(url);
-    setStatus("done");
+    setDone(true);
     window.open(url, "_blank", "noopener");
     form.reset();
   }
@@ -314,7 +282,7 @@ function Contact() {
           <input name="city" placeholder="शहर" maxLength={100} className={input} />
           <input name="monthly_bill" placeholder="पिछले महीने का बिल (₹ / Units / kW)" maxLength={50} className={input} />
           {error && <p className="text-sm text-destructive">{error}</p>}
-          {status === "done" && (
+          {done && (
             <div className="space-y-2">
               <p className="text-sm font-semibold text-primary">धन्यवाद! आपकी जानकारी मिल गई है।</p>
               <a
@@ -327,11 +295,8 @@ function Contact() {
               </a>
             </div>
           )}
-          <button
-            disabled={status === "sending"}
-            className="w-full rounded-xl bg-sun py-3.5 text-lg font-bold text-sun-foreground transition hover:opacity-90 disabled:opacity-60"
-          >
-            {status === "sending" ? "भेजा जा रहा है..." : "Submit करें"}
+          <button className="w-full rounded-xl bg-sun py-3.5 text-lg font-bold text-sun-foreground transition hover:opacity-90">
+            Submit करें
           </button>
         </form>
       </div>

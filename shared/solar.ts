@@ -1,4 +1,4 @@
-import type { CalcResult } from "../shared/schemas";
+import type { CalcResult } from "./schemas";
 
 // Planning assumptions for Jaipur rooftops. Adjust these to match current
 // market rates; every calculator figure is derived from them.
@@ -46,7 +46,7 @@ export function estimate(units: number, backup: boolean): Omit<CalcResult, "summ
 
 const inr = (n: number) => "₹" + Math.round(n).toLocaleString("en-IN");
 
-// Used when no Claude credentials are configured or the AI call fails.
+// Plain-language Hindi summary shown under the calculator results.
 export function templateSummary(units: number, e: Omit<CalcResult, "summary_hindi">) {
   return (
     `आपकी ${units} यूनिट मासिक खपत के लिए ${e.system_kw} kW का ${e.system_type} सही रहेगा। ` +
