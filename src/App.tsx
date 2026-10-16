@@ -74,7 +74,7 @@ function Hero() {
           5+ वर्षों के अटूट विश्वास के साथ—जयपुर के सबसे भरोसेमंद <span className="text-sun">सोलर कंसलटेंट</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-primary-foreground/85 md:text-xl">
-          On-Grid, Off-Grid और Hybrid सोलर सिस्टम्स के माध्यम से आपके बिजली के बिल को करें 100% ज़ीरो।
+          On-Grid, Off-Grid और Hybrid सोलर सिस्टम्स के साथ अपने बिजली के बिल में करें भारी बचत।
         </p>
         <a
           href={WHATSAPP_INSPECTION}
