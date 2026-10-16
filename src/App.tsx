@@ -71,7 +71,7 @@ function Hero() {
           5+ वर्षों का अनुभव • Jaipur
         </span>
         <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-primary-foreground md:text-6xl">
-          5+ वर्षों के अटूट विश्वास के साथ—जयपुर के सबसे भरोसेमंद <span className="text-sun">सोलर कंसलटेंट</span>
+          5+ वर्षों के अटूट विश्वास के साथ जयपुर के सबसे भरोसेमंद <span className="text-sun">सोलर कंसलटेंट</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-primary-foreground/85 md:text-xl">
           On-Grid, Off-Grid और Hybrid सोलर सिस्टम्स के साथ अपने बिजली के बिल में करें भारी बचत।
