@@ -55,8 +55,12 @@ function Header() {
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
         <Logo />
-        <a href={PHONE_TEL} className="hidden text-sm font-semibold text-primary-foreground sm:block">
-          📱 {PHONE_DISPLAY}
+        {/* same height as the logo badge (h-16 image + py-2) */}
+        <a
+          href={PHONE_TEL}
+          className="hidden h-20 items-center gap-3 rounded-xl border border-white/30 bg-white/15 px-6 text-2xl font-bold text-primary-foreground shadow-md backdrop-blur transition-colors hover:bg-white/25 sm:inline-flex"
+        >
+          <span className="text-3xl" aria-hidden="true">📱</span> {PHONE_DISPLAY}
         </a>
       </div>
     </header>
