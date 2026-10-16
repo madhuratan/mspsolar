@@ -314,7 +314,9 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 md:grid-cols-2">
         <div>
           <Logo />
-          <div className="mt-2 text-primary-foreground/70">www.solarmsp.in</div>
+          <a href="https://www.potaliyaenterprises.com/" target="_blank" rel="noreferrer" className="mt-2 block text-primary-foreground/70 hover:text-sun">
+            www.potaliyaenterprises.com
+          </a>
         </div>
         <ul className="space-y-2">
           <li>
