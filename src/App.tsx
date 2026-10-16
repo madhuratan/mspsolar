@@ -26,7 +26,7 @@ const services = [
   },
   {
     icon: "🛠️",
-    title: "Top Brand Partnership",
+    title: "Brands We Work With",
     text: "TATA, ADANI, और WAAREE के अधिकृत कंपोनेंट्स की उपलब्धता।",
   },
 ];
@@ -68,10 +68,10 @@ function Hero() {
       <div className="hero-overlay absolute inset-0" />
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-5 pt-24 pb-16">
         <span className="mb-5 w-fit rounded-full bg-sun/20 px-4 py-1 text-sm font-semibold text-sun">
-          15+ वर्षों का अनुभव • Jaipur
+          5+ वर्षों का अनुभव • Jaipur
         </span>
         <h1 className="max-w-3xl text-4xl font-extrabold leading-tight text-primary-foreground md:text-6xl">
-          15+ वर्षों के अटूट विश्वास के साथ—जयपुर के सबसे भरोसेमंद <span className="text-sun">सोलर कंसलटेंट</span>
+          5+ वर्षों के अटूट विश्वास के साथ—जयपुर के सबसे भरोसेमंद <span className="text-sun">सोलर कंसलटेंट</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-primary-foreground/85 md:text-xl">
           On-Grid और Hybrid सोलर सिस्टम्स के माध्यम से आपके बिजली के बिल को करें 100% ज़ीरो।
@@ -112,14 +112,14 @@ function About() {
     <section className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-[1fr_2fr]">
         <div className="text-center">
-          <div className="text-8xl font-extrabold text-sun">15+</div>
+          <div className="text-8xl font-extrabold text-sun">5+</div>
           <div className="mt-2 text-lg">वर्षों का तजुर्बा</div>
         </div>
         <div>
           <p className="font-semibold text-sun">About the Expert</p>
           <h2 className="mt-2 text-3xl font-extrabold">मधु सूदन पारीक</h2>
           <blockquote className="mt-6 border-l-4 border-sun pl-5 text-lg leading-relaxed text-primary-foreground/90">
-            "मैं मधु सूदन पारीक, पिछले 15+ वर्षों से सेल्स, मार्केटिंग और सौर ऊर्जा के क्षेत्र में सक्रिय हूँ। मेरा एकमात्र उद्देश्य
+            "मैं मधु सूदन पारीक, पिछले 5+ वर्षों से सेल्स, मार्केटिंग और सौर ऊर्जा के क्षेत्र में सक्रिय हूँ। मेरा एकमात्र उद्देश्य
             ग्राहकों को बिना किसी किचकिच के, सही बजट में, पूरी ईमानदारी और पारदर्शिता के साथ बेस्ट क्वालिटी सोलर सिस्टम दिलवाना
             है। बाज़ार में साख और तजुर्बा जुबान से कमाया जाता है, और आपकी संतुष्टि ही हमारी असली कमाई है।"
           </blockquote>
