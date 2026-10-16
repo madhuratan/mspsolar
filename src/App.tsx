@@ -11,7 +11,7 @@ const WHATSAPP_INSPECTION = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
 const services = [
   {
     icon: "☀️",
-    title: "Complete System Design",
+    title: "Complete Solution",
     text: "3kW से लेकर 50kW+ तक के ऑन-ग्रिड, ऑफ-ग्रिड (Off-Grid) और हाइब्रिड (Hybrid) सोलर सिस्टम्स का इंस्टॉलेशन।",
   },
   {
