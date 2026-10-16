@@ -16,7 +16,7 @@ const services = [
   },
   {
     icon: "📑",
-    title: "100% Subsidy Assistance",
+    title: "Subsidy Assistance",
     text: "पीएम-सूर्य घर मुफ्त बिजली योजना के तहत ₹78,000 तक की सरकारी सब्सिडी (DCR) की पूरी कागज़ी कार्रवाई।",
   },
   {
