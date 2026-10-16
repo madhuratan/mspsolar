@@ -147,7 +147,7 @@ function WhyUs() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20">
       <p className="font-semibold text-sun">Why Choose Us?</p>
-      <h2 className="mt-2 text-3xl font-extrabold text-primary md:text-4xl">सोलर से आपकी कितनी बचत होगी?</h2>
+      <h2 className="mt-2 text-3xl font-extrabold text-primary md:text-4xl">आपके सोलर सफर में भरोसेमंद साथी</h2>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <div className="rounded-2xl bg-accent p-8">
           <h3 className="text-xl font-bold text-primary">🤝 No Company Pressure</h3>
