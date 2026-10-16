@@ -45,7 +45,7 @@ function Logo({ className = "" }: { className?: string }) {
   // white badge keeps the blue/green logo readable on the dark header and footer
   return (
     <span className={`inline-flex items-center rounded-xl bg-white px-3 py-2 shadow-md ${className}`}>
-      <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="Potaliya Enterprises Pvt. Ltd." width={640} height={183} className="h-11 w-auto sm:h-14" />
+      <img src={`${import.meta.env.BASE_URL}logo.png`} alt="ॐ Solar" width={944} height={364} className="h-12 w-auto sm:h-16" />
     </span>
   );
 }
@@ -329,9 +329,6 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 md:grid-cols-2">
         <div>
           <Logo />
-          <a href="https://www.potaliyaenterprises.com/" target="_blank" rel="noreferrer" className="mt-2 block text-primary-foreground/70 hover:text-sun">
-            www.potaliyaenterprises.com
-          </a>
         </div>
         <ul className="space-y-2">
           <li>
