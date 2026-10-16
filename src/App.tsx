@@ -33,16 +33,20 @@ const services = [
 
 const inr = (n: number) => "₹" + Math.round(n).toLocaleString("en-IN");
 
+function Logo({ className = "" }: { className?: string }) {
+  // white badge keeps the blue/green logo readable on the dark header and footer
+  return (
+    <span className={`inline-flex items-center rounded-xl bg-white px-3 py-2 shadow-md ${className}`}>
+      <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="Potaliya Enterprises Pvt. Ltd." width={640} height={183} className="h-11 w-auto sm:h-14" />
+    </span>
+  );
+}
+
 function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-20">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
-        <div className="flex items-center gap-2 text-primary-foreground">
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-sun text-xl">☀</span>
-          <span className="text-lg font-extrabold tracking-wide">
-            MSP <span className="text-sun">SOLAR</span> CONSULTANCY
-          </span>
-        </div>
+        <Logo />
         <a href={PHONE_TEL} className="hidden text-sm font-semibold text-primary-foreground sm:block">
           📱 {PHONE_DISPLAY}
         </a>
@@ -309,9 +313,7 @@ function Footer() {
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 md:grid-cols-2">
         <div>
-          <div className="text-xl font-extrabold">
-            MSP <span className="text-sun">SOLAR</span> CONSULTANCY
-          </div>
+          <Logo />
           <div className="mt-2 text-primary-foreground/70">www.solarmsp.in</div>
         </div>
         <ul className="space-y-2">
