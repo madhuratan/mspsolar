@@ -12,7 +12,7 @@ const services = [
   {
     icon: "☀️",
     title: "Complete System Design",
-    text: "3kW से लेकर 50kW+ तक के ऑन-ग्रिड और हाइब्रिड (Hybrid) सोलर सिस्टम्स का इंस्टॉलेशन।",
+    text: "3kW से लेकर 50kW+ तक के ऑन-ग्रिड, ऑफ-ग्रिड (Off-Grid) और हाइब्रिड (Hybrid) सोलर सिस्टम्स का इंस्टॉलेशन।",
   },
   {
     icon: "📑",
