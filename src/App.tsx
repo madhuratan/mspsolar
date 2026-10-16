@@ -181,13 +181,13 @@ function Calculator() {
     ? [
         ["सिस्टम साइज़", `${result.system_kw} kW`],
         ["पैनल्स", `${result.panels}`],
-        ["छत की जगह", `~${Math.round(result.roof_area_sqft)} sq ft`],
-        ["मासिक उत्पादन", `~${Math.round(result.monthly_generation_units)} units`],
+        ["छत की जगह", `${Math.round(result.roof_area_sqft)} sq ft`],
+        ["मासिक उत्पादन", `${Math.round(result.monthly_generation_units)} units`],
         ["मासिक बचत", inr(result.monthly_savings_inr)],
         ["सालाना बचत", inr(result.yearly_savings_inr)],
         ["अनुमानित लागत", inr(result.approx_cost_inr)],
         ["सब्सिडी", inr(result.subsidy_inr)],
-        ["पेबैक", `~${result.payback_years.toFixed(1)} वर्ष`],
+        ["पेबैक", `${result.payback_years.toFixed(1)} वर्ष`],
       ]
     : [];
 
