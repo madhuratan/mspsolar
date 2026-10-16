@@ -196,7 +196,7 @@ function Calculator() {
       <p className="font-semibold text-sun">AI Solar Calculator</p>
       <h2 className="mt-2 text-3xl font-extrabold text-primary md:text-4xl">आपके घर के लिए कितना सोलर?</h2>
       <p className="mt-3 text-muted-foreground">
-        अपनी मासिक बिजली यूनिट्स डालें — AI आपके लिए सही सिस्टम और बचत का अनुमान बताएगा।
+        अपनी मासिक बिजली यूनिट्स डालें और AI आपके लिए सही सिस्टम और बचत का अनुमान बताएगा।
       </p>
       <form
         onSubmit={onSubmit}
